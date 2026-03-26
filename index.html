@@ -4,1069 +4,599 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Combo Guarda Municipal Completo | JR Apostilas</title>
-  <meta name="description" content="Combo completo para Guarda Municipal com apostilas, mapas mentais, legislação específica e bônus exclusivos." />
+  <meta name="description" content="Combo completo para Guarda Municipal com legislação mapeada, apostilas, mapas mentais e bônus exclusivos." />
   <style>
-    :root {
-      --bg: #030b1d;
-      --bg-soft: #08142d;
-      --card: rgba(15, 29, 58, 0.9);
-      --card-border: rgba(255,255,255,0.08);
-      --text: #f4f7ff;
-      --muted: #bac7e6;
-      --primary: #2f67ff;
-      --primary-2: #5b8cff;
-      --yellow: #f3c613;
-      --red: #ff1717;
-      --green: #21c36b;
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
-      --radius: 22px;
-      --max: 1200px;
+    :root{
+      --bg:#040c1c;
+      --bg2:#09162f;
+      --card:#0d1b37;
+      --card2:#102348;
+      --line:rgba(255,255,255,.08);
+      --text:#f5f8ff;
+      --muted:#c7d4ef;
+      --primary:#2d67ff;
+      --primary2:#5f92ff;
+      --accent:#f1c40f;
+      --danger:#ff1717;
+      --success:#19c36b;
+      --max:1180px;
+      --radius:24px;
+      --shadow:0 22px 60px rgba(0,0,0,.35);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:linear-gradient(180deg,#061127 0%,#030913 100%);
+      color:var(--text);
+      overflow-x:hidden;
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .container{width:min(92%,var(--max));margin:0 auto}
+
+    .top-offer{
+      position:sticky;top:0;z-index:1200;
+      background:var(--danger);
+      color:#fff;text-align:center;
+      font-size:18px;font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.3px;
+      padding:15px 10px;
+      box-shadow:0 10px 28px rgba(0,0,0,.25);
+    }
+
+    .navbar{
+      position:sticky;top:52px;z-index:1100;
+      backdrop-filter:blur(12px);
+      background:rgba(4,12,28,.75);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav-wrap{
+      min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .logo{font-size:30px;font-weight:900}
+    .logo span{color:var(--primary2)}
+    .nav-links{display:flex;gap:24px;font-weight:800;color:#dce7ff}
+    .nav-links a:hover{color:var(--primary2)}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:none;cursor:pointer;border-radius:999px;
+      font-weight:900;transition:.25s ease;box-shadow:var(--shadow)
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(90deg,var(--primary),var(--primary2));color:#fff;padding:16px 28px}
+    .btn-yellow{background:var(--accent);color:#111;padding:18px 32px}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.16);color:#fff;padding:18px 30px;box-shadow:none}
+    .btn-small{padding:13px 22px}
+    .btn-full{width:100%}
+
+    .hero{
+      position:relative;min-height:100vh;display:flex;align-items:center;
+      padding:70px 0 90px;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;
       background:
-        radial-gradient(circle at top, rgba(36,74,170,.18), transparent 35%),
-        linear-gradient(180deg, #04102a 0%, #020916 100%);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      width: min(92%, var(--max));
-      margin: 0 auto;
-    }
-
-    .promo-bar {
-      position: sticky;
-      top: 0;
-      z-index: 1100;
-      width: 100%;
-      background: var(--red);
-      color: #fff;
-      text-align: center;
-      font-weight: 900;
-      font-size: 18px;
-      line-height: 1.35;
-      padding: 16px 12px;
-      text-transform: uppercase;
-      letter-spacing: .25px;
-      box-shadow: 0 10px 24px rgba(0,0,0,.24);
-    }
-
-    .topbar {
-      position: sticky;
-      top: 58px;
-      z-index: 1000;
-      backdrop-filter: blur(12px);
-      background: rgba(3, 10, 28, .72);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-
-    .topbar-content {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .logo {
-      font-size: 30px;
-      font-weight: 900;
-      color: #fff;
-    }
-
-    .logo span { color: var(--primary-2); }
-
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      color: #dbe6ff;
-      font-weight: 700;
-    }
-
-    .menu a:hover { color: var(--primary-2); }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border: none;
-      cursor: pointer;
-      font-weight: 900;
-      border-radius: 999px;
-      padding: 17px 28px;
-      transition: .25s ease;
-      box-shadow: 0 16px 40px rgba(0,0,0,.28);
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: linear-gradient(90deg, var(--primary), var(--primary-2));
-      color: #fff;
-    }
-
-    .btn-yellow {
-      background: var(--yellow);
-      color: #111;
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,.16);
-      color: #fff;
-      box-shadow: none;
-    }
-
-    .btn-small { padding: 13px 22px; font-size: 15px; }
-    .btn-large { padding: 21px 38px; font-size: 18px; }
-    .full { width: 100%; }
-
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 70px 0 80px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to right, rgba(1,8,20,.92), rgba(1,8,20,.58)),
-        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop') center/cover;
-      opacity: .6;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1.12fr .88fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(47, 103, 255, .12);
-      border: 1px solid rgba(105, 147, 255, .22);
-      color: #9cbcff;
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      font-size: clamp(40px, 6vw, 68px);
-      line-height: 1.06;
-      margin-bottom: 18px;
-      max-width: 840px;
-    }
-
-    .hero p.lead {
-      font-size: 21px;
-      color: #d8e2f8;
-      max-width: 760px;
-      margin-bottom: 28px;
-    }
-
-    .hero-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(220px, 1fr));
-      gap: 14px;
-      margin-bottom: 30px;
-    }
-
-    .hero-list div {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      padding: 16px 18px;
-      border-radius: 16px;
-      color: #edf3ff;
-      font-weight: 700;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .micro-proof {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      color: var(--muted);
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .offer-card {
-      background: linear-gradient(180deg, rgba(12,25,52,.95), rgba(9,18,36,.92));
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 28px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .offer-card::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: rgba(91, 140, 255, .16);
-      top: -40px;
-      right: -30px;
-      filter: blur(20px);
-    }
-
-    .badge-sale {
-      display: inline-flex;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255, 23, 23, .16);
-      border: 1px solid rgba(255, 80, 80, .22);
-      color: #ff9f9f;
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .offer-card h2 {
-      font-size: 34px;
-      line-height: 1.1;
-      margin-bottom: 10px;
-    }
-
-    .offer-card p { color: #d4def5; }
-
-    .price-row {
-      display: flex;
-      align-items: end;
-      gap: 14px;
-      margin: 20px 0 10px;
-      flex-wrap: wrap;
-    }
-
-    .old-price {
-      text-decoration: line-through;
-      color: #93a3c8;
-      font-size: 20px;
-      font-weight: 700;
-    }
-
-    .new-price {
-      font-size: 56px;
-      line-height: 1;
-      font-weight: 900;
-      color: #fff;
-    }
-
-    .price-info {
-      color: #a9b8db;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .countdown-box {
-      margin: 18px 0 22px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      padding: 16px;
-      border-radius: 18px;
-    }
-
-    .countdown-label {
-      color: #ffbbbb;
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .time-box {
-      background: rgba(255,255,255,.05);
-      border-radius: 16px;
-      text-align: center;
-      padding: 14px 10px;
-      border: 1px solid rgba(255,255,255,.06);
-    }
-
-    .time-box strong {
-      display: block;
-      font-size: 28px;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .time-box span {
-      color: #afbddc;
-      font-size: 12px;
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: .4px;
-    }
-
-    .secure-note {
-      margin-top: 14px;
-      text-align: center;
-      color: #aebcdf;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .section { padding: 95px 0; }
-    .section-dark { background: rgba(4, 12, 30, .42); }
-
-    .section-title {
-      max-width: 900px;
-      margin: 0 auto 44px;
-      text-align: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #8eb0ff;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(32px, 4vw, 56px);
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-
-    .section-title p {
-      color: var(--muted);
-      font-size: 20px;
-    }
-
-    .features-grid,
-    .bonus-grid,
-    .proof-grid,
-    .faq-grid,
-    .comparison-grid,
-    .content-grid,
-    .testimonial-grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    .features-grid,
-    .bonus-grid,
-    .proof-grid,
-    .content-grid,
-    .testimonial-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .card {
-      background: linear-gradient(180deg, rgba(16,31,62,.96), rgba(11,22,42,.96));
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: var(--shadow);
-    }
-
-    .icon-box {
-      width: 78px;
-      height: 78px;
-      border-radius: 22px;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,.08);
-      font-size: 34px;
-      margin-bottom: 22px;
-    }
-
-    .card h3 {
-      font-size: 24px;
-      line-height: 1.2;
-      margin-bottom: 14px;
-    }
-
-    .card p, .card li {
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .numbers {
-      padding: 26px 0;
-      background: rgba(255,255,255,.03);
-      border-top: 1px solid rgba(255,255,255,.05);
-      border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-
-    .numbers-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .number-card {
-      text-align: center;
-      padding: 22px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.06);
-    }
-
-    .number-card strong {
-      display: block;
-      font-size: 40px;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-
-    .number-card span {
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .comparison-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .comparison-card ul {
-      list-style: none;
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .comparison-card li {
-      padding-left: 28px;
-      position: relative;
-    }
-
-    .comparison-card li::before {
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-weight: 900;
-    }
-
-    .comparison-card.bad li::before { content: "✖"; color: #ff7777; }
-    .comparison-card.good li::before { content: "✔"; color: #53d58d; }
-
-    .highlight-band {
-      background: linear-gradient(90deg, rgba(47,103,255,.14), rgba(91,140,255,.05));
-      border-top: 1px solid rgba(255,255,255,.06);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-
-    .checklist {
-      list-style: none;
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .checklist li {
-      position: relative;
-      padding-left: 30px;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .checklist li::before {
-      content: "✔";
-      color: #56d88f;
-      position: absolute;
-      left: 0;
-      font-weight: 900;
-    }
-
-    .big-cta {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .cta-panel {
-      background: linear-gradient(135deg, rgba(14,27,56,.96), rgba(11,20,37,.96));
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 28px;
-      padding: 34px;
-      box-shadow: var(--shadow);
-    }
-
-    .cta-panel h3 {
-      font-size: 34px;
-      line-height: 1.12;
-      margin-bottom: 14px;
-    }
-
-    .cta-panel p { color: var(--muted); font-size: 19px; }
-
-    .guarantee {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-top: 24px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 20px;
-      padding: 18px;
-    }
-
-    .guarantee-icon {
-      min-width: 64px;
-      min-height: 64px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,.08);
-      font-size: 28px;
-    }
-
-    .testimonial-card .stars {
-      font-size: 20px;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-      color: #ffd34f;
-    }
-
-    .testimonial-card strong {
-      display: block;
-      margin-top: 16px;
-      font-size: 17px;
-    }
-
-    .faq-wrap {
-      max-width: 980px;
-      margin: 0 auto;
-      display: grid;
-      gap: 16px;
-    }
-
-    .faq-item {
-      background: rgba(14,28,56,.96);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      width: 100%;
-      padding: 24px;
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-size: 20px;
-      font-weight: 900;
-      text-align: left;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 0 24px 24px;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .urgency-mini {
-      margin-top: 20px;
-      background: rgba(243,198,19,.10);
-      border: 1px solid rgba(243,198,19,.22);
-      color: #ffe48b;
-      padding: 16px 18px;
-      border-radius: 16px;
-      font-weight: 800;
-      text-align: center;
-    }
-
-    .footer {
-      padding: 60px 0 120px;
-      background: rgba(0,0,0,.18);
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr .8fr;
-      gap: 24px;
-    }
-
-    .footer h4, .footer h3 { margin-bottom: 14px; }
-    .footer p, .footer a { color: var(--muted); display: block; margin-bottom: 10px; }
-
-    .copyright {
-      margin-top: 30px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,.06);
-      color: #90a1c9;
-      text-align: center;
-    }
-
-    .floating-offer-btn {
-      position: fixed;
-      right: 20px;
-      bottom: 24px;
-      z-index: 1200;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--yellow);
-      color: #111;
-      font-size: 20px;
-      font-weight: 900;
-      padding: 24px 46px;
-      border-radius: 999px;
-      box-shadow: 0 18px 44px rgba(0,0,0,.34);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .floating-offer-btn:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 24px 50px rgba(0,0,0,.4);
-    }
-
-    .floating-offer-btn.pulse {
-      animation: pulseOffer 1.8s infinite;
-    }
-
-    @keyframes pulseOffer {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(243,198,19,.45); }
-      70% { transform: scale(1.03); box-shadow: 0 0 0 20px rgba(243,198,19,0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(243,198,19,0); }
-    }
-
-    .mobile-menu-btn { display: none; }
-
-    @media (max-width: 1100px) {
-      .hero-content,
-      .big-cta,
-      .comparison-wrap,
-      .footer-grid { grid-template-columns: 1fr; }
-
-      .features-grid,
-      .bonus-grid,
-      .proof-grid,
-      .content-grid,
-      .testimonial-grid,
-      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
-
-      .hero { min-height: auto; }
-      .topbar { top: 54px; }
-    }
-
-    @media (max-width: 768px) {
-      .promo-bar { font-size: 14px; padding: 14px 10px; }
-      .topbar { top: 46px; }
-      .topbar-content { min-height: 72px; }
-      .menu { display: none; }
-      .mobile-menu-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255,255,255,.06);
-        color: #fff;
-        border: 1px solid rgba(255,255,255,.08);
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
-        font-size: 22px;
-      }
-
-      .mobile-menu {
-        display: none;
-        padding: 0 0 20px;
-      }
-
-      .mobile-menu.active {
-        display: grid;
-        gap: 12px;
-      }
-
-      .mobile-menu a {
-        color: #dbe6ff;
-        font-weight: 800;
-        padding: 12px 14px;
-        border-radius: 14px;
-        background: rgba(255,255,255,.04);
-      }
-
-      .hero-content,
-      .features-grid,
-      .bonus-grid,
-      .proof-grid,
-      .content-grid,
-      .testimonial-grid,
-      .numbers-grid,
-      .hero-list { grid-template-columns: 1fr; }
-
-      .hero { padding: 44px 0 60px; }
-      .hero p.lead, .section-title p, .card p, .card li, .faq-answer, .cta-panel p { font-size: 17px; }
-      .offer-card { padding: 24px; }
-      .new-price { font-size: 46px; }
-      .countdown { grid-template-columns: repeat(2, 1fr); }
-      .floating-offer-btn {
-        right: 14px;
-        left: 14px;
-        bottom: 16px;
-        width: calc(100% - 28px);
-        font-size: 18px;
-        padding: 20px 20px;
-      }
-      .btn-large { width: 100%; }
-      .footer { padding-bottom: 110px; }
+        linear-gradient(to right,rgba(2,8,20,.92),rgba(2,8,20,.55)),
+        url('https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1600&auto=format&fit=crop') center/cover;
+      opacity:.32;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:auto -10% -120px auto;
+      width:420px;height:420px;border-radius:50%;
+      background:rgba(45,103,255,.18);filter:blur(30px);
+    }
+    .hero-grid{
+      position:relative;z-index:2;
+      display:grid;grid-template-columns:1.08fr .92fr;gap:38px;align-items:center;
+    }
+    .tag{
+      display:inline-block;padding:10px 16px;border-radius:999px;
+      background:rgba(45,103,255,.12);border:1px solid rgba(95,146,255,.22);
+      color:#9fbfff;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:20px;
+    }
+    .hero h1{font-size:clamp(40px,6vw,68px);line-height:1.05;margin-bottom:18px;max-width:830px}
+    .hero p.lead{font-size:21px;color:#dce6fb;max-width:760px;margin-bottom:28px}
+    .hero-bullets{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:14px;margin-bottom:28px}
+    .hero-bullets div{
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;padding:16px 18px;font-weight:800;color:#eef4ff
+    }
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+    .micro-proof{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-weight:800}
+
+    .offer-card{
+      position:relative;background:linear-gradient(180deg,rgba(14,27,56,.96),rgba(8,18,38,.96));
+      border:1px solid var(--line);border-radius:30px;padding:30px;box-shadow:var(--shadow);overflow:hidden
+    }
+    .offer-card::before{
+      content:"";position:absolute;top:-35px;right:-25px;width:180px;height:180px;border-radius:50%;
+      background:rgba(95,146,255,.2);filter:blur(16px)
+    }
+    .sale-chip{
+      display:inline-flex;padding:10px 14px;border-radius:999px;background:rgba(255,23,23,.16);
+      border:1px solid rgba(255,113,113,.25);color:#ffb3b3;font-size:13px;font-weight:900;text-transform:uppercase;margin-bottom:16px
+    }
+    .offer-card h2{font-size:34px;line-height:1.12;margin-bottom:10px}
+    .offer-card p{color:#d1def8}
+    .price-row{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin:20px 0 10px}
+    .old-price{font-size:20px;text-decoration:line-through;color:#91a2c9;font-weight:800}
+    .new-price{font-size:60px;line-height:1;font-weight:900}
+    .sub-price{font-weight:800;color:#b4c3e4;margin-bottom:18px}
+    .countdown-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:16px;margin:18px 0 20px}
+    .countdown-label{font-size:13px;font-weight:900;color:#ffb4b4;text-transform:uppercase;margin-bottom:12px}
+    .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .time{
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);border-radius:18px;
+      text-align:center;padding:14px 10px
+    }
+    .time strong{display:block;font-size:28px;line-height:1;margin-bottom:6px}
+    .time span{font-size:12px;color:#afbfdf;font-weight:800;text-transform:uppercase}
+    .secure-note{text-align:center;font-size:14px;color:#a9bbdf;font-weight:800;margin-top:14px}
+
+    .image-stack{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .image-stack img{width:100%;height:160px;object-fit:cover;border-radius:18px;border:1px solid rgba(255,255,255,.08)}
+
+    .stats{padding:24px 0;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .stat-card{padding:24px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:20px;text-align:center}
+    .stat-card strong{display:block;font-size:40px;margin-bottom:8px}
+    .stat-card span{color:var(--muted);font-weight:800}
+
+    .section{padding:96px 0}
+    .section-dark{background:rgba(255,255,255,.02)}
+    .section-title{max-width:940px;margin:0 auto 44px;text-align:center}
+    .eyebrow{display:inline-block;color:#97b6ff;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+    .section-title h2{font-size:clamp(32px,4vw,54px);line-height:1.1;margin-bottom:14px}
+    .section-title p{font-size:20px;color:var(--muted)}
+
+    .carousel-shell{position:relative;overflow:hidden}
+    .carousel-track{display:flex;gap:18px;width:max-content;animation:slideTrack 36s linear infinite}
+    .carousel-track.reverse{animation-direction:reverse;animation-duration:42s}
+    .carousel-card{min-width:340px;max-width:340px;position:relative}
+    .carousel-card img{width:100%;height:230px;object-fit:cover;border-radius:22px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .carousel-label{
+      position:absolute;left:14px;bottom:14px;background:rgba(4,12,28,.78);backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,.08);padding:10px 12px;border-radius:14px;font-size:14px;font-weight:900
+    }
+    @keyframes slideTrack{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    .grid-3,.grid-2,.bonus-grid,.plans-grid,.faq-grid,.testimonial-grid,.feature-grid{display:grid;gap:24px}
+    .grid-3,.bonus-grid,.testimonial-grid,.feature-grid{grid-template-columns:repeat(3,1fr)}
+    .grid-2,.plans-grid{grid-template-columns:repeat(2,1fr)}
+    .card{
+      background:linear-gradient(180deg,rgba(15,29,58,.96),rgba(10,20,40,.96));
+      border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)
+    }
+    .icon{width:78px;height:78px;border-radius:22px;display:grid;place-items:center;background:rgba(255,255,255,.07);font-size:34px;margin-bottom:20px}
+    .card h3{font-size:24px;line-height:1.2;margin-bottom:12px}
+    .card p,.card li{font-size:18px;color:var(--muted)}
+    .checklist{list-style:none;display:grid;gap:14px;margin-top:18px}
+    .checklist li{position:relative;padding-left:28px}
+    .checklist li::before{content:"✔";position:absolute;left:0;top:0;color:#54db90;font-weight:900}
+
+    .law-list{columns:2;gap:28px;margin-top:8px}
+    .law-list li{break-inside:avoid;margin-bottom:14px;padding-left:26px;position:relative;color:#eaf1ff;font-weight:700}
+    .law-list li::before{content:"⚖";position:absolute;left:0;top:0;color:#9ec1ff}
+
+    .feature-hero{display:grid;grid-template-columns:1.02fr .98fr;gap:28px;align-items:center}
+    .feature-hero img{width:100%;height:100%;min-height:420px;object-fit:cover;border-radius:28px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+
+    .bonus-card .value{display:inline-block;margin-top:16px;color:#9ef0c0;font-weight:900}
+
+    .plan-card{position:relative;overflow:hidden}
+    .plan-card.highlight{border-color:rgba(241,196,15,.28);transform:scale(1.02)}
+    .plan-badge{
+      position:absolute;top:18px;right:18px;background:var(--accent);color:#111;padding:10px 14px;border-radius:999px;
+      font-size:12px;font-weight:900;text-transform:uppercase
+    }
+    .plan-price-old{color:#91a2c9;text-decoration:line-through;font-size:18px;font-weight:800;margin-top:8px}
+    .plan-price-new{font-size:50px;font-weight:900;line-height:1;margin:10px 0 8px}
+    .plan-sub{color:#bdd0f6;font-weight:800;margin-bottom:18px}
+
+    .guarantee-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:26px;align-items:center}
+    .seal{
+      display:flex;align-items:center;justify-content:center;min-height:320px;
+      background:linear-gradient(135deg,rgba(18,35,72,.98),rgba(10,20,40,.98));
+      border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)
+    }
+    .seal-circle{
+      width:240px;height:240px;border-radius:50%;border:10px solid rgba(255,255,255,.08);
+      display:grid;place-items:center;background:radial-gradient(circle,rgba(45,103,255,.16),rgba(255,255,255,.02));
+      text-align:center;padding:20px;font-weight:900;font-size:26px
+    }
+
+    .faq-item{background:linear-gradient(180deg,rgba(15,29,58,.96),rgba(10,20,40,.96));border:1px solid var(--line);border-radius:20px;overflow:hidden}
+    .faq-q{width:100%;background:none;border:none;color:#fff;text-align:left;padding:24px;font-size:20px;font-weight:900;display:flex;justify-content:space-between;gap:16px;cursor:pointer}
+    .faq-a{display:none;padding:0 24px 24px;color:var(--muted);font-size:18px}
+
+    .footer{padding:60px 0 120px;background:rgba(0,0,0,.18);border-top:1px solid rgba(255,255,255,.06)}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:24px}
+    .footer h3,.footer h4{margin-bottom:14px}
+    .footer p,.footer a{color:var(--muted);display:block;margin-bottom:10px}
+    .copy{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);text-align:center;color:#90a4cd}
+
+    .floating-cta{
+      position:fixed;right:18px;bottom:20px;z-index:1250;
+      background:var(--accent);color:#111;padding:22px 38px;border-radius:999px;
+      font-size:20px;font-weight:900;box-shadow:0 20px 48px rgba(0,0,0,.35);
+      animation:pulse 1.8s infinite
+    }
+    @keyframes pulse{
+      0%{transform:scale(1);box-shadow:0 0 0 0 rgba(241,196,15,.45)}
+      70%{transform:scale(1.03);box-shadow:0 0 0 18px rgba(241,196,15,0)}
+      100%{transform:scale(1);box-shadow:0 0 0 0 rgba(241,196,15,0)}
+    }
+
+    .mobile-toggle{display:none}
+    .mobile-menu{display:none}
+
+    @media(max-width:1100px){
+      .hero-grid,.feature-hero,.guarantee-wrap,.grid-2,.plans-grid,.footer-grid{grid-template-columns:1fr}
+      .grid-3,.bonus-grid,.testimonial-grid,.feature-grid,.stats-grid{grid-template-columns:repeat(2,1fr)}
+      .hero{min-height:auto}
+      .navbar{top:48px}
+      .law-list{columns:1}
+    }
+
+    @media(max-width:768px){
+      .top-offer{font-size:14px;padding:13px 10px}
+      .navbar{top:40px}
+      .nav-links,.nav-wrap .btn-primary{display:none}
+      .mobile-toggle{display:inline-flex;width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#fff;align-items:center;justify-content:center;font-size:22px}
+      .mobile-menu.active{display:grid;gap:10px;padding:0 0 20px}
+      .mobile-menu a{padding:12px 14px;background:rgba(255,255,255,.04);border-radius:14px;font-weight:800;color:#deebff}
+      .hero-grid,.grid-3,.bonus-grid,.testimonial-grid,.feature-grid,.stats-grid,.hero-bullets,.countdown{grid-template-columns:1fr}
+      .hero{padding:46px 0 58px}
+      .hero p.lead,.section-title p,.card p,.card li,.faq-a{font-size:17px}
+      .offer-card{padding:24px}
+      .new-price,.plan-price-new{font-size:44px}
+      .carousel-card{min-width:280px;max-width:280px}
+      .floating-cta{left:12px;right:12px;width:calc(100% - 24px);text-align:center;padding:18px 20px;font-size:18px}
+      .footer{padding-bottom:110px}
     }
   </style>
 </head>
 <body>
-  <div class="promo-bar" id="promoBar">
-    <span id="promoText">⚠ OFERTA ESPECIAL DE HOJE — CONDIÇÃO PROMOCIONAL ATUALIZADA DIARIAMENTE ⚠</span>
-  </div>
+  <div class="top-offer" id="offerBar">⚠ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE ⚠</div>
 
-  <header class="topbar">
+  <header class="navbar">
     <div class="container">
-      <div class="topbar-content">
+      <div class="nav-wrap">
         <div class="logo">JR <span>Apostilas</span></div>
-        <nav class="menu">
-          <a href="#conteudo">Conteúdo</a>
-          <a href="#diferenciais">Diferenciais</a>
+        <nav class="nav-links">
+          <a href="#material">Material</a>
+          <a href="#leis">Leis</a>
           <a href="#bonus">Bônus</a>
+          <a href="#planos">Oferta</a>
           <a href="#faq">FAQ</a>
         </nav>
-        <a href="SEU_LINK_MERCADO_PAGO" target="_blank" class="btn btn-primary btn-small">Comprar Agora</a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="btn btn-primary btn-small">Comprar Agora</a>
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
       </div>
       <nav class="mobile-menu" id="mobileMenu">
-        <a href="#conteudo">Conteúdo</a>
-        <a href="#diferenciais">Diferenciais</a>
+        <a href="#material">Material</a>
+        <a href="#leis">Leis</a>
         <a href="#bonus">Bônus</a>
+        <a href="#planos">Oferta</a>
         <a href="#faq">FAQ</a>
       </nav>
     </div>
   </header>
 
   <section class="hero">
-    <div class="container hero-content">
+    <div class="container hero-grid">
       <div>
-        <div class="tag">🔥 material completo para guarda municipal</div>
-        <h1>Combo Guarda Municipal completo com apostilas, mapas mentais, legislação e bônus para estudar com mais direção</h1>
-        <p class="lead">Pare de estudar por material solto. Aqui você entrega ao aluno uma estrutura organizada, visual e direta ao ponto para revisar melhor, memorizar mais rápido e manter constância na preparação.</p>
+        <div class="tag">combo legislação mapeada + apostilas + mapas mentais</div>
+        <h1>Estude para Guarda Municipal com um combo grande, profissional e muito mais visual</h1>
+        <p class="lead">Tenha acesso a uma oferta forte com apostilas, legislação específica, mapas mentais e bônus para estudar com mais direção, revisar mais rápido e aumentar sua confiança até a prova.</p>
 
-        <div class="hero-list">
-          <div>✔ Apostilas completas e organizadas</div>
-          <div>✔ Mais de 300 mapas mentais</div>
-          <div>✔ Leis específicas e legislação mapeada</div>
-          <div>✔ Lógicas dos aprovados como bônus</div>
+        <div class="hero-bullets">
+          <div>✔ Apostilas organizadas e prontas para estudo</div>
+          <div>✔ Mais de 300 mapas mentais visuais</div>
+          <div>✔ Legislação mapeada para Guarda Municipal</div>
+          <div>✔ Bônus extras para reforçar a preparação</div>
         </div>
 
         <div class="hero-actions">
-          <a href="SEU_LINK_MERCADO_PAGO" target="_blank" class="btn btn-yellow btn-large">Garantir Preparatório</a>
-          <a href="#conteudo" class="btn btn-outline btn-large">Ver tudo que recebo</a>
+          <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="btn btn-yellow">Quero garantir agora</a>
+          <a href="#material" class="btn btn-outline">Ver tudo que recebo</a>
         </div>
 
         <div class="micro-proof">
-          <span>✅ Entrega digital</span>
-          <span>✅ Acesso rápido</span>
-          <span>✅ Estude no celular ou computador</span>
+          <span>✅ Compra online</span>
+          <span>✅ Acesso digital</span>
+          <span>✅ Estude no celular, notebook ou tablet</span>
         </div>
       </div>
 
-      <div class="offer-card">
-        <div class="badge-sale">⚠ condição especial de hoje</div>
-        <h2>Combo Guarda Municipal Premium</h2>
-        <p>Um pacote pensado para quem quer vender um material forte, com percepção de valor alta e visual profissional.</p>
+      <aside class="offer-card">
+        <div class="sale-chip">⏰ condição especial de hoje</div>
+        <h2>Combo Guarda Municipal Completo</h2>
+        <p>Uma página forte de conversão com muito mais imagens, estrutura grande e visual profissional para aumentar o valor percebido da sua oferta.</p>
 
         <div class="price-row">
           <span class="old-price">de R$ 97,00</span>
-          <span class="new-price">R$ 19,90</span>
+          <span class="new-price">R$ 19,99</span>
         </div>
-
-        <div class="price-info">Pagamento único • acesso digital • oferta ativa nesta página</div>
+        <div class="sub-price">pagamento único • acesso digital imediato</div>
 
         <div class="countdown-box">
-          <div class="countdown-label">⏰ Atualização da condição promocional em:</div>
-          <div class="countdown" id="countdown">
-            <div class="time-box"><strong id="days">00</strong><span>Dias</span></div>
-            <div class="time-box"><strong id="hours">00</strong><span>Horas</span></div>
-            <div class="time-box"><strong id="minutes">00</strong><span>Min</span></div>
-            <div class="time-box"><strong id="seconds">00</strong><span>Seg</span></div>
+          <div class="countdown-label">atualização da condição promocional em:</div>
+          <div class="countdown">
+            <div class="time"><strong id="days">00</strong><span>Dias</span></div>
+            <div class="time"><strong id="hours">00</strong><span>Horas</span></div>
+            <div class="time"><strong id="minutes">00</strong><span>Min</span></div>
+            <div class="time"><strong id="seconds">00</strong><span>Seg</span></div>
           </div>
         </div>
 
-        <a href="SEU_LINK_MERCADO_PAGO" target="_blank" class="btn btn-yellow full">Quero comprar agora</a>
-        <div class="secure-note">🔒 Compra segura • entrega digital após a confirmação</div>
-      </div>
-    </div>
-  </section>
+        <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="btn btn-yellow btn-full">Quero meu acesso agora</a>
+        <div class="secure-note">🔒 compra segura • liberação digital após a confirmação</div>
 
-  <section class="numbers">
-    <div class="container numbers-grid">
-      <div class="number-card"><strong>+300</strong><span>mapas mentais</span></div>
-      <div class="number-card"><strong>100%</strong><span>acesso digital</span></div>
-      <div class="number-card"><strong>1 combo</strong><span>tudo organizado</span></div>
-      <div class="number-card"><strong>bônus</strong><span>lógicas dos aprovados</span></div>
-    </div>
-  </section>
-
-  <section class="section" id="conteudo">
-    <div class="container">
-      <div class="section-title">
-        <div class="eyebrow">📦 o que vai dentro do combo</div>
-        <h2>Uma estrutura grande, bonita e com cara de produto premium</h2>
-        <p>Esse bloco foi pensado para dar percepção forte de valor e explicar exatamente o que o aluno leva ao comprar seu preparatório.</p>
-      </div>
-
-      <div class="content-grid">
-        <article class="card">
-          <div class="icon-box">📚</div>
-          <h3>Apostilas completas</h3>
-          <p>Material organizado por tópicos para facilitar leitura, consulta e rotina de estudos sem bagunça.</p>
-        </article>
-        <article class="card">
-          <div class="icon-box">🧠</div>
-          <h3>Mapas mentais prontos</h3>
-          <p>Resumos visuais para acelerar a memorização, revisar com rapidez e fixar os pontos que mais caem.</p>
-        </article>
-        <article class="card">
-          <div class="icon-box">⚖️</div>
-          <h3>Legislação mapeada</h3>
-          <p>Leis específicas e partes importantes destacadas de forma mais estratégica para estudo e revisão.</p>
-        </article>
-        <article class="card">
-          <div class="icon-box">📝</div>
-          <h3>Conteúdo direto ao ponto</h3>
-          <p>Uma apresentação pensada para reduzir distração e aumentar foco em assuntos relevantes para prova.</p>
-        </article>
-        <article class="card">
-          <div class="icon-box">📱</div>
-          <h3>Acesso em qualquer dispositivo</h3>
-          <p>Seu cliente pode estudar pelo celular, notebook, tablet ou computador com total praticidade.</p>
-        </article>
-        <article class="card">
-          <div class="icon-box">🎯</div>
-          <h3>Material com percepção premium</h3>
-          <p>Um site forte e um produto bem apresentado ajudam muito na conversão e no valor percebido.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-dark" id="diferenciais">
-    <div class="container">
-      <div class="section-title">
-        <div class="eyebrow">🚀 por que esse material chama atenção</div>
-        <h2>O que faz esse preparatório ser diferente</h2>
-        <p>Você não precisa vender de forma simples demais. Aqui a estrutura do site comunica valor, organização e urgência de compra.</p>
-      </div>
-
-      <div class="features-grid">
-        <article class="card">
-          <div class="icon-box">💎</div>
-          <h3>Percepção de valor alta</h3>
-          <p>Layout forte, seções grandes e copy bem distribuída fazem o produto parecer maior e mais profissional.</p>
-        </article>
-        <article class="card">
-          <div class="icon-box">⚡</div>
-          <h3>Urgência visual</h3>
-          <p>Faixa vermelha, contador, botão flutuante e destaque de oferta ajudam a puxar a decisão de compra.</p>
-        </article>
-        <article class="card">
-          <div class="icon-box">🏆</div>
-          <h3>Entrega clara do benefício</h3>
-          <p>O aluno entende rápido o que recebe: apostila, mapas mentais, legislação e bônus em um só lugar.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section highlight-band">
-    <div class="container">
-      <div class="section-title">
-        <div class="eyebrow">⚔ comparação</div>
-        <h2>Estudar com material solto x estudar com seu combo organizado</h2>
-        <p>Essa seção é boa para mostrar contraste e aumentar a sensação de que o seu produto resolve um problema real.</p>
-      </div>
-
-      <div class="comparison-wrap">
-        <div class="card comparison-card bad">
-          <h3>Sem o combo</h3>
-          <ul>
-            <li>Material espalhado em vários lugares</li>
-            <li>Revisão lenta e cansativa</li>
-            <li>Pouca organização mental</li>
-            <li>Dificuldade para memorizar leis</li>
-            <li>Sensação de estudo aleatório</li>
-          </ul>
+        <div class="image-stack">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900&auto=format&fit=crop" alt="Profissional de segurança em ambiente urbano" />
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=900&auto=format&fit=crop" alt="Homem em postura de autoridade" />
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=900&auto=format&fit=crop" alt="Agente uniformizado em postura séria" />
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=900&auto=format&fit=crop" alt="Patrulhamento urbano e segurança pública" />
         </div>
-        <div class="card comparison-card good">
-          <h3>Com o combo JR Apostilas</h3>
-          <ul>
-            <li>Apostila e legislação no mesmo pacote</li>
-            <li>Mapas mentais para revisão rápida</li>
-            <li>Mais clareza no que estudar</li>
-            <li>Facilidade para revisar no celular</li>
-            <li>Mais percepção de direção e controle</li>
-          </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-card"><strong>+300</strong><span>mapas mentais</span></div>
+      <div class="stat-card"><strong>100%</strong><span>material digital</span></div>
+      <div class="stat-card"><strong>vários</strong><span>conteúdos em um só combo</span></div>
+      <div class="stat-card"><strong>bônus</strong><span>extras para reforçar a oferta</span></div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">galeria em destaque</div>
+        <h2>Um site mais visual, com carrosséis e imagens para motivar a compra</h2>
+        <p>Você pediu um site grande e profissional. Então aqui entra uma área mais forte de imagens, com estilo de página de vendas robusta e dinâmica.</p>
+      </div>
+
+      <div class="carousel-shell" aria-label="Carrossel de imagens principais">
+        <div class="carousel-track">
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop" alt="Agente em postura séria" /><div class="carousel-label">Foco total na aprovação</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=1200&auto=format&fit=crop" alt="Patrulhamento urbano" /><div class="carousel-label">Preparação com mais direção</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=1200&auto=format&fit=crop" alt="Autoridade e disciplina" /><div class="carousel-label">Visual de autoridade</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?q=80&w=1200&auto=format&fit=crop" alt="Equipe de segurança em ação" /><div class="carousel-label">Material para rotina corrida</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Profissional de segurança" /><div class="carousel-label">Estude com mais confiança</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop" alt="Agente em postura séria repetido" /><div class="carousel-label">Foco total na aprovação</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=1200&auto=format&fit=crop" alt="Patrulhamento urbano repetido" /><div class="carousel-label">Preparação com mais direção</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=1200&auto=format&fit=crop" alt="Autoridade e disciplina repetido" /><div class="carousel-label">Visual de autoridade</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?q=80&w=1200&auto=format&fit=crop" alt="Equipe de segurança em ação repetido" /><div class="carousel-label">Material para rotina corrida</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="bonus">
+  <section class="section" id="material">
+    <div class="container feature-hero">
+      <div class="card">
+        <div class="eyebrow">o que você recebe</div>
+        <h2 style="font-size:42px;line-height:1.12;margin-bottom:14px;">Um combo completo para estudar melhor e revisar com mais velocidade</h2>
+        <p style="font-size:19px;color:var(--muted);">A proposta aqui é simples: parar de estudar no escuro, ter material organizado e contar com uma apresentação forte o suficiente para deixar seu produto com aparência premium.</p>
+        <ul class="checklist">
+          <li>Apostilas completas organizadas por assunto</li>
+          <li>Mapas mentais visuais para revisão rápida</li>
+          <li>Legislação específica para Guarda Municipal</li>
+          <li>Bônus pensados para aumentar a percepção de valor</li>
+          <li>Acesso digital para estudar onde quiser</li>
+        </ul>
+        <div style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="btn btn-primary">Comprar por R$ 19,99</a>
+          <a href="#planos" class="btn btn-outline">Ver oferta</a>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1400&auto=format&fit=crop" alt="Imagem temática de segurança pública com postura séria" />
+    </div>
+  </section>
+
+  <section class="section section-dark" id="leis">
     <div class="container">
       <div class="section-title">
-        <div class="eyebrow">🎁 bônus que aumentam a oferta</div>
-        <h2>Além do combo principal, o cliente ainda recebe bônus estratégicos</h2>
-        <p>Esses blocos são ótimos para aumentar o valor percebido e justificar melhor a compra.</p>
+        <div class="eyebrow">leis e temas do combo</div>
+        <h2>Conteúdos e legislações que fortalecem a sua oferta</h2>
+        <p>Inspirado na lógica de páginas de alta conversão: mostrar claramente o que o aluno vai dominar ao entrar no seu combo.</p>
+      </div>
+
+      <div class="card">
+        <ul class="law-list">
+          <li>Estatuto Geral das Guardas Municipais</li>
+          <li>Lei Maria da Penha</li>
+          <li>Estatuto do Desarmamento</li>
+          <li>Sistema Único de Segurança Pública</li>
+          <li>Código de Trânsito Brasileiro</li>
+          <li>Estatuto da Criança e do Adolescente</li>
+          <li>Estatuto da Pessoa Idosa</li>
+          <li>Abuso de Autoridade</li>
+          <li>Lei de Drogas</li>
+          <li>Lei de Racismo</li>
+          <li>Lei de Tortura</li>
+          <li>Crimes Ambientais</li>
+          <li>Crimes Hediondos</li>
+          <li>Juizados Especiais</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">benefícios</div>
+        <h2>Por que esse tipo de estrutura converte melhor</h2>
+        <p>Mais blocos, mais imagens, mais contraste visual e mais explicação do valor do produto deixam a página com muito mais cara de oferta profissional.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="card"><div class="icon">🧠</div><h3>Revisão mais rápida</h3><p>Mapas mentais e conteúdo organizado ajudam quem tem rotina corrida e precisa revisar de forma prática.</p></article>
+        <article class="card"><div class="icon">🎯</div><h3>Mais foco no que importa</h3><p>Ao mostrar as leis, bônus e materiais de forma clara, o visitante entende rápido o valor do seu combo.</p></article>
+        <article class="card"><div class="icon">🚀</div><h3>Mais valor percebido</h3><p>Uma estrutura grande com visual premium faz o produto parecer mais completo e profissional.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="bonus">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">bônus exclusivos</div>
+        <h2>Bônus que empurram ainda mais a decisão de compra</h2>
+        <p>Essa parte foi inspirada na lógica das páginas mais agressivas de venda: produto principal forte e uma pilha de bônus embaixo.</p>
       </div>
 
       <div class="bonus-grid">
-        <article class="card">
-          <div class="icon-box">🧩</div>
-          <h3>Lógicas dos aprovados</h3>
-          <p>Um bônus para reforçar a parte estratégica da preparação e ajudar o aluno a manter ritmo de estudo.</p>
+        <article class="card bonus-card"><div class="icon">📘</div><h3>Bônus 01 — Questões comentadas</h3><p>Ideal para complementar o estudo e aumentar a sensação de preparo antes da prova.</p><span class="value">Valor percebido: GRÁTIS</span></article>
+        <article class="card bonus-card"><div class="icon">✍️</div><h3>Bônus 02 — Português</h3><p>Material extra com reforço em tópicos importantes para quem quer uma preparação mais completa.</p><span class="value">Valor percebido: GRÁTIS</span></article>
+        <article class="card bonus-card"><div class="icon">📊</div><h3>Bônus 03 — Raciocínio lógico</h3><p>Mais apoio para revisar raciocínio lógico e manter o aluno dentro da sua oferta por mais tempo.</p><span class="value">Valor percebido: GRÁTIS</span></article>
+        <article class="card bonus-card"><div class="icon">💻</div><h3>Bônus 04 — Informática</h3><p>Um extra importante para aumentar o pacote e dar percepção de combo realmente robusto.</p><span class="value">Valor percebido: GRÁTIS</span></article>
+        <article class="card bonus-card"><div class="icon">🔥</div><h3>Bônus 05 — Comunidade VIP</h3><p>Você pode adaptar para grupo, suporte, orientações ou qualquer outro benefício que queira oferecer.</p><span class="value">Valor percebido: GRÁTIS</span></article>
+        <article class="card bonus-card"><div class="icon">🛡️</div><h3>Bônus 06 — Atualizações</h3><p>Área reservada para prometer novas versões, conteúdos extras ou atualização do material conforme sua estratégia.</p><span class="value">Valor percebido: GRÁTIS</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">mais imagens para impacto</div>
+        <h2>Carrossel secundário para aumentar a imersão visual</h2>
+        <p>Essa faixa extra deixa o site com mais presença e menos cara de página curta.</p>
+      </div>
+
+      <div class="carousel-shell" aria-label="Carrossel secundário de imagens">
+        <div class="carousel-track reverse">
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop" alt="Profissional atento" /><div class="carousel-label">Disciplina e preparo</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop" alt="Segurança e patrulha urbana" /><div class="carousel-label">Rotina de patrulhamento</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="Postura séria e uniforme" /><div class="carousel-label">Visual de autoridade</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="Foco e estratégia" /><div class="carousel-label">Foco até a prova</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Autoridade e confiança" /><div class="carousel-label">Confiança na preparação</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop" alt="Profissional atento repetido" /><div class="carousel-label">Disciplina e preparo</div></div>
+          <div class="carousel-card"><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop" alt="Segurança e patrulha urbana repetido" /><div class="carousel-label">Rotina de patrulhamento</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="planos">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">oferta final</div>
+        <h2>Escolha a oferta e garanta seu acesso hoje</h2>
+        <p>Como você pediu, deixei a versão focada em um preço forte de entrada para puxar mais cliques no botão de pagamento.</p>
+      </div>
+
+      <div class="plans-grid">
+        <article class="card plan-card">
+          <h3>Plano de entrada</h3>
+          <p>Ideal para quem quer começar com o combo principal, mapas mentais e apresentação forte da oferta.</p>
+          <div class="plan-price-old">de R$ 47,00</div>
+          <div class="plan-price-new">R$ 19,99</div>
+          <div class="plan-sub">pagamento único</div>
+          <ul class="checklist">
+            <li>Combo Guarda Municipal completo</li>
+            <li>Mapas mentais e legislação</li>
+            <li>Bônus inclusos</li>
+            <li>Acesso digital</li>
+          </ul>
+          <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="btn btn-yellow btn-full" style="margin-top:22px;">Quero comprar agora</a>
         </article>
-        <article class="card">
-          <div class="icon-box">📌</div>
-          <h3>Revisão simplificada</h3>
-          <p>Conteúdo que favorece consulta rápida para não perder horas procurando informação importante.</p>
+
+        <article class="card plan-card highlight">
+          <div class="plan-badge">mais escolhido</div>
+          <h3>Plano completo em destaque</h3>
+          <p>Versão visualmente destacada para puxar mais conversão e mais atenção logo na seção de compra.</p>
+          <div class="plan-price-old">de R$ 97,00</div>
+          <div class="plan-price-new">R$ 19,99</div>
+          <div class="plan-sub">condição especial desta página</div>
+          <ul class="checklist">
+            <li>Combo principal com apresentação premium</li>
+            <li>Pilha de bônus exibida na página</li>
+            <li>Percepção de valor muito mais alta</li>
+            <li>Botões fixos e chamada final forte</li>
+            <li>Pronto para usar com seu link da Eduzz</li>
+          </ul>
+          <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="btn btn-yellow btn-full" style="margin-top:22px;">Garantir minha oferta</a>
         </article>
-        <article class="card">
-          <div class="icon-box">🔥</div>
-          <h3>Oferta visualmente forte</h3>
-          <p>O próprio site funciona como argumento de venda, com chamada grande, preço visível e CTA constante.</p>
-        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container guarantee-wrap">
+      <div class="seal">
+        <div class="seal-circle">30 DIAS<br>DE<br>GARANTIA</div>
+      </div>
+      <div class="card">
+        <div class="eyebrow">garantia</div>
+        <h2 style="font-size:42px;line-height:1.12;margin-bottom:14px;">Uma seção de segurança para reduzir objeções</h2>
+        <p style="font-size:19px;color:var(--muted);">Assim como nas páginas grandes de venda, a área de garantia ajuda a passar mais segurança para quem está quase comprando. Você pode adaptar o texto conforme sua política real.</p>
+        <ul class="checklist">
+          <li>Mais confiança na hora da compra</li>
+          <li>Mais clareza sobre entrega digital</li>
+          <li>Mais força na decisão final do visitante</li>
+        </ul>
+        <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="btn btn-primary" style="margin-top:22px;">Quero meu acesso agora</a>
       </div>
     </div>
   </section>
 
   <section class="section section-dark">
-    <div class="container big-cta">
-      <div class="cta-panel">
-        <div class="eyebrow">✅ para quem esse material é ideal</div>
-        <h3>Feito para quem quer vender um combo forte para Guarda Municipal</h3>
-        <ul class="checklist">
-          <li>Quem quer uma página bonita e profissional</li>
-          <li>Quem quer vender apostila, mapas mentais e legislação juntos</li>
-          <li>Quem quer destacar bônus e valor da oferta</li>
-          <li>Quem precisa de um site grande, não uma página simples</li>
-          <li>Quem quer um botão fixo empurrando conversão</li>
-        </ul>
-      </div>
-
-      <div class="cta-panel">
-        <div class="eyebrow">🛡 compra segura</div>
-        <h3>Oferta com visual de urgência e estrutura pronta para conversão</h3>
-        <p>Você só precisa trocar o link do Mercado Pago, o preço, seus textos finais e as imagens reais do seu produto. A base já fica com cara de página profissional.</p>
-        <div class="guarantee">
-          <div class="guarantee-icon">🔒</div>
-          <div>
-            <strong>Compra online com entrega digital</strong>
-            <p>Ideal para vender apostilas, mapas mentais e combo de legislação por link ou acesso liberado após pagamento.</p>
-          </div>
-        </div>
-        <div class="urgency-mini">⏰ Atenção: a condição especial apresentada nesta página pode ser atualizada a qualquer momento.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
     <div class="container">
       <div class="section-title">
-        <div class="eyebrow">💬 prova social</div>
-        <h2>Depoimentos que você pode substituir pelos seus reais</h2>
-        <p>Esses cards já deixam a página com aparência mais confiável. Depois você troca pelos feedbacks verdadeiros dos seus alunos.</p>
+        <div class="eyebrow">prova social</div>
+        <h2>Depoimentos para reforçar o valor percebido</h2>
+        <p>Depois você substitui por feedbacks reais de alunos ou compradores do seu material.</p>
       </div>
 
       <div class="testimonial-grid">
-        <article class="card testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>“Gostei porque veio tudo em um combo só. Ficou muito melhor para revisar e estudar de forma organizada.”</p>
-          <strong>— Aluno 01</strong>
-        </article>
-        <article class="card testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>“Os mapas mentais me ajudaram bastante a revisar mais rápido. Material muito bem montado.”</p>
-          <strong>— Aluno 02</strong>
-        </article>
-        <article class="card testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>“A página ficou profissional e a oferta parece bem mais valiosa. Dá vontade de comprar na hora.”</p>
-          <strong>— Aluno 03</strong>
-        </article>
+        <article class="card"><div class="icon">⭐</div><h3>Muito mais organizado</h3><p>“Gostei porque tudo ficou mais fácil de revisar. O material parece mais completo e profissional.”</p></article>
+        <article class="card"><div class="icon">⭐</div><h3>Visual forte</h3><p>“O site ficou com cara de produto premium. Dá mais vontade de clicar e comprar.”</p></article>
+        <article class="card"><div class="icon">⭐</div><h3>Boa apresentação</h3><p>“Os carrosséis, imagens e blocos grandes deixaram a página muito melhor que uma landing curta.”</p></article>
       </div>
     </div>
   </section>
 
-  <section class="section section-dark" id="faq">
+  <section class="section" id="faq">
     <div class="container">
       <div class="section-title">
-        <div class="eyebrow">❓ perguntas frequentes</div>
-        <h2>Tire as dúvidas antes da compra</h2>
-        <p>Essa área ajuda a remover objeções e aumentar a confiança de quem está quase comprando.</p>
+        <div class="eyebrow">perguntas frequentes</div>
+        <h2>Área de dúvidas para fechar mais vendas</h2>
+        <p>Essa parte ajuda muito a remover objeções antes do clique no botão de pagamento.</p>
       </div>
 
-      <div class="faq-wrap">
+      <div class="faq-grid">
         <div class="faq-item">
-          <button class="faq-question">Como o cliente recebe o material? <span>+</span></button>
-          <div class="faq-answer">Após a confirmação do pagamento, você pode liberar o material por link, email, Drive ou página de confirmação.</div>
+          <button class="faq-q">Como o cliente recebe o material? <span>+</span></button>
+          <div class="faq-a">Após a confirmação do pagamento, você pode liberar o acesso por link, email, Drive, área de membros ou mensagem automática.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">O acesso é físico ou digital? <span>+</span></button>
-          <div class="faq-answer">Esse modelo foi feito para produto 100% digital, ideal para apostilas, leis, mapas mentais e bônus em arquivo.</div>
+          <button class="faq-q">Esse site já está com meu link? <span>+</span></button>
+          <div class="faq-a">Sim. Todos os botões principais desta versão já estão apontando para o seu link da Eduzz.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Posso vender pelo Mercado Pago? <span>+</span></button>
-          <div class="faq-answer">Sim. Basta substituir todos os lugares com SEU_LINK_MERCADO_PAGO pelo seu link real de pagamento.</div>
+          <button class="faq-q">Posso trocar as imagens depois? <span>+</span></button>
+          <div class="faq-a">Sim. Você pode substituir qualquer imagem por outras mais alinhadas com sua marca ou com seu produto real.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Posso trocar textos, cores e preço? <span>+</span></button>
-          <div class="faq-answer">Sim. O site inteiro é editável. Você pode adaptar para sua marca, concurso, combo e tipo de oferta.</div>
+          <button class="faq-q">Posso mudar o texto e os bônus? <span>+</span></button>
+          <div class="faq-a">Sim. Toda a estrutura foi feita para ser editável. Dá para trocar títulos, listas, planos, bônus e seções inteiras.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Esse botão amarelo fica fixo na tela? <span>+</span></button>
-          <div class="faq-answer">Sim. Ele foi feito para ficar sempre visível e aumentar a chance do visitante clicar e comprar.</div>
+          <button class="faq-q">Esse botão amarelo fica fixo? <span>+</span></button>
+          <div class="faq-a">Sim. Ele permanece visível para puxar mais cliques na oferta ao longo da navegação.</div>
         </div>
       </div>
     </div>
@@ -1074,11 +604,11 @@
 
   <section class="section">
     <div class="container">
-      <div class="cta-panel" style="text-align:center;">
-        <div class="eyebrow">🔥 chamada final</div>
-        <h3>Garanta agora o seu Combo Guarda Municipal completo</h3>
-        <p style="max-width: 820px; margin: 0 auto 22px;">Apostilas completas, mapas mentais, leis específicas e bônus em uma estrutura grande e forte, pronta para gerar muito mais valor percebido na sua oferta.</p>
-        <a href="SEU_LINK_MERCADO_PAGO" target="_blank" class="btn btn-yellow btn-large">Quero garantir meu acesso agora</a>
+      <div class="card" style="text-align:center;padding:42px 30px;">
+        <div class="eyebrow">chamada final</div>
+        <h2 style="font-size:50px;line-height:1.08;margin-bottom:16px;">Garanta agora o seu Combo Guarda Municipal completo por R$ 19,99</h2>
+        <p style="max-width:820px;margin:0 auto 24px;color:var(--muted);font-size:20px;">Apostilas, mapas mentais, legislação mapeada, bônus e uma página muito mais visual, grande e profissional para vender melhor.</p>
+        <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="btn btn-yellow">Quero comprar agora</a>
       </div>
     </div>
   </section>
@@ -1087,79 +617,70 @@
     <div class="container footer-grid">
       <div>
         <h3>JR Apostilas</h3>
-        <p>Materiais digitais para concursos com estrutura profissional, visual forte e foco em conversão.</p>
+        <p>Materiais digitais para concursos com estrutura forte de venda, apresentação visual e foco em conversão.</p>
       </div>
       <div>
-        <h4>Links rápidos</h4>
-        <a href="#conteudo">Conteúdo</a>
-        <a href="#diferenciais">Diferenciais</a>
+        <h4>Links</h4>
+        <a href="#material">Material</a>
+        <a href="#leis">Leis</a>
         <a href="#bonus">Bônus</a>
-        <a href="#faq">FAQ</a>
+        <a href="#planos">Oferta</a>
       </div>
       <div>
         <h4>Suporte</h4>
         <p>Email ou WhatsApp</p>
-        <p>Atendimento digital</p>
+        <p>Entrega digital</p>
       </div>
     </div>
-    <div class="container copyright">© 2026 JR Apostilas — Todos os direitos reservados.</div>
+    <div class="container copy">© 2026 JR Apostilas — Todos os direitos reservados.</div>
   </footer>
 
-  <a href="SEU_LINK_MERCADO_PAGO" class="floating-offer-btn pulse" id="floatingOfferBtn" target="_blank">Garantir Preparatório</a>
+  <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="floating-cta">Garantir Preparatório</a>
 
   <script>
-    const promoText = document.getElementById('promoText');
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const offerBar = document.getElementById('offerBar');
+    const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-    const faqButtons = document.querySelectorAll('.faq-question');
+    const faqButtons = document.querySelectorAll('.faq-q');
 
-    function atualizarFaixaPromocional() {
+    function updateOfferBar(){
       const hoje = new Date();
-      const opcoes = { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' };
-      const dataFormatada = hoje.toLocaleDateString('pt-BR', opcoes);
-      promoText.textContent = `⚠ OFERTA ESPECIAL DE HOJE — CONDIÇÃO PROMOCIONAL ATUALIZADA DIARIAMENTE | ${dataFormatada.toUpperCase()} ⚠`;
+      const formatada = hoje.toLocaleDateString('pt-BR');
+      offerBar.textContent = `⚠ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE ${formatada} ⚠`;
     }
 
-    function atualizarContadorDiario() {
+    function updateCountdown(){
       const now = new Date();
       const tomorrow = new Date();
-      tomorrow.setHours(24, 0, 0, 0);
-
+      tomorrow.setHours(24,0,0,0);
       const diff = tomorrow - now;
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff / (1000*60*60)) % 24);
+      const minutes = Math.floor((diff / (1000*60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
-
-      document.getElementById('days').textContent = String(days).padStart(2, '0');
-      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      document.getElementById('days').textContent = String(days).padStart(2,'0');
+      document.getElementById('hours').textContent = String(hours).padStart(2,'0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
     }
 
-    atualizarFaixaPromocional();
-    atualizarContadorDiario();
-    setInterval(atualizarContadorDiario, 1000);
+    updateOfferBar();
+    updateCountdown();
+    setInterval(updateCountdown,1000);
 
-    mobileMenuBtn?.addEventListener('click', () => {
+    mobileToggle?.addEventListener('click',()=>{
       mobileMenu.classList.toggle('active');
     });
 
-    faqButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const answer = button.nextElementSibling;
-        const symbol = button.querySelector('span');
-        const isOpen = answer.style.display === 'block';
-
-        document.querySelectorAll('.faq-answer').forEach((item) => {
-          item.style.display = 'none';
-        });
-        document.querySelectorAll('.faq-question span').forEach((item) => {
-          item.textContent = '+';
-        });
-
-        answer.style.display = isOpen ? 'none' : 'block';
-        symbol.textContent = isOpen ? '+' : '−';
+    faqButtons.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const answer = btn.nextElementSibling;
+        const symbol = btn.querySelector('span');
+        const open = answer.style.display === 'block';
+        document.querySelectorAll('.faq-a').forEach(el=>el.style.display='none');
+        document.querySelectorAll('.faq-q span').forEach(el=>el.textContent='+');
+        answer.style.display = open ? 'none' : 'block';
+        symbol.textContent = open ? '+' : '−';
       });
     });
   </script>
