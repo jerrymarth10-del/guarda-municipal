@@ -14,7 +14,9 @@
 html { scroll-behavior:smooth; }
 body {
   font-family:Arial,Helvetica,sans-serif;
-  background:linear-gradient(180deg,#05101f,#030914);
+  background:
+    linear-gradient(rgba(3,8,20,0.88), rgba(3,8,20,0.95)),
+    url('assets/capa-guarda.jpeg') center/cover no-repeat fixed;
   color:var(--text); line-height:1.6; overflow-x:hidden;
 }
 a { color:inherit; text-decoration:none; }
@@ -148,20 +150,22 @@ img { max-width:100%; display:block; }
 .faq-item { background:linear-gradient(180deg,rgba(15,29,58,.96),rgba(10,20,40,.96)); border:1px solid var(--line); border-radius:20px; overflow:hidden; }
 .faq-q { width:100%; background:none; border:none; color:#fff; text-align:left; padding:24px; font-size:20px; font-weight:900; display:flex; justify-content:space-between; gap:14px; cursor:pointer; }
 .faq-a { display:none; padding:0 24px 24px; color:var(--muted); font-size:18px; }
-.footer { padding:60px 0 120px; background:rgba(0,0,0,.18); border-top:1px solid rgba(255,255,255,.06); }
-.footer-grid { display:grid; grid-template-columns:1.2fr .8fr .8fr; gap:24px; }
+.footer {
+  padding:40px 0 120px; background:rgba(0,0,0,.16); border-top:1px solid rgba(255,255,255,.06);
+}
+.footer-grid { display:block; }
 .footer h3,.footer h4 { margin-bottom:14px; }
 .footer p,.footer a { color:var(--muted); display:block; margin-bottom:10px; }
 .copy { margin-top:28px; padding-top:18px; border-top:1px solid rgba(255,255,255,.06); text-align:center; color:#90a4cd; }
 .floating-cta, .floating-whats {
-  position:fixed; z-index:1250; border-radius:999px; font-weight:900; box-shadow:0 20px 48px rgba(0,0,0,.35);
+  right:18px; bottom:92px; background:#25d366; color:#fff; padding:14px 18px; font-size:14px;
 }
 .floating-cta {
   right:18px; bottom:20px; background:var(--gold); color:#111; padding:22px 38px; font-size:20px;
   animation:pulse 1.8s infinite;
 }
 .floating-whats {
-  left:18px; bottom:20px; background:#25d366; color:#fff; padding:18px 24px; font-size:18px;
+  right:18px; bottom:92px; background:#25d366; color:#fff; padding:10px 16px; font-size:13px; border-radius:50px;
 }
 @keyframes pulse {
   0% { transform:scale(1); box-shadow:0 0 0 0 rgba(241,196,15,.45); }
@@ -190,7 +194,7 @@ img { max-width:100%; display:block; }
   .carousel-card img { height:360px; }
   .hero-media { grid-template-columns:1fr; }
   .floating-cta { right:12px; left:12px; width:calc(100% - 24px); text-align:center; bottom:16px; padding:18px 20px; font-size:18px; }
-  .floating-whats { left:12px; bottom:78px; padding:15px 18px; font-size:16px; }
+  .floating-whats { right:12px; left:auto; bottom:76px; padding:12px 16px; font-size:13px; }
   .footer { padding-bottom:120px; }
 }
 </style>
@@ -226,8 +230,8 @@ img { max-width:100%; display:block; }
   <div class="container hero-grid">
     <div>
       <div class="tag">porto velho - rondônia | guarda municipal | banca idecan</div>
-      <h1>Resumos bizurados para Guarda Municipal com visual forte, mapas mentais e oferta profissional</h1>
-      <p class="lead">Agora sim com as suas artes reais no site. A página ficou mais alinhada com o seu produto, com capa oficial, mapa mental, vídeo e botões prontos para compra e suporte.</p>
+      <h1>Garanta seu material completo para Guarda Municipal e estude com muito mais direção, revisão rápida e foco no que realmente cai</h1>
+      <p class="lead">Tenha acesso a um combo estratégico com resumos bizurados, mapas mentais, simulados e apoio visual para acelerar sua preparação e chegar mais confiante no dia da prova.</p>
       <div class="hero-bullets">
         <div>✔ Material focado em Guarda Municipal</div>
         <div>✔ Arte oficial do seu produto em destaque</div>
@@ -239,21 +243,21 @@ img { max-width:100%; display:block; }
         <a href="#video" class="btn btn-outline">Assistir apresentação</a>
       </div>
       <div class="micro-proof">
-        <span>✅ Compra online</span>
-        <span>✅ Acesso digital</span>
-        <span>✅ Suporte por WhatsApp</span>
+        <span>✅ Acesso digital imediato</span>
+        <span>✅ Material focado em Guarda Municipal</span>
+        <span>✅ Estude pelo celular ou computador</span>
       </div>
     </div>
 
     <aside class="offer-card">
       <div class="sale-chip">⏰ condição especial de hoje</div>
       <h2>Combo Guarda Municipal Porto Velho</h2>
-      <p>Oferta com a sua capa oficial, seus resumos e sua comunicação visual real — sem fotos aleatórias.</p>
+      <p>Material pensado para quem quer estudar com mais clareza, revisar com rapidez e entrar na prova com muito mais segurança.</p>
       <div class="price-row">
         <span class="old-price">de R$ 97,00</span>
         <span class="new-price">R$ 19,99</span>
       </div>
-      <div class="price-sub">pagamento único • acesso digital • link da Eduzz já aplicado</div>
+      <div class="price-sub">pagamento único • acesso liberado após a confirmação</div>
       <div class="countdown-box">
         <div class="countdown-label">atualização da condição promocional em:</div>
         <div class="countdown">
@@ -270,15 +274,15 @@ img { max-width:100%; display:block; }
         <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QCiRXhpZgAATU0AKgAAAAgABgESAAMAAAABAAEAAAEaAAUAAAABAAAAVgEbAAUAAAABAAAAXgEoAAMAAAABAAIAAAITAAMAAAABAAEAAAAAAAAAAABIAAAAAQAAAEgAAAABUGFpbnQuTkVUIHYzLjM2AAACoAIABAAAAAEAAAP9oAMABAAAAAEAAAR5AAAAAP/bAEMAAwICAwICAwMDAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/bAEMBAwMDBAQEBQoEBQoUDBQMDBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAQAA/0DASIAAhEBAxEB/8QAHQABAQEAAgMBAQAAAAAAAAAABQYBAwQCBwgJCv/EAFMQAAEDAgQDBQUEBQgHBQkAAAEAAgMEEQUSITEGE0FRImFxgZEykaEHFDNSUrHB0RVCYnKS4fAVM2Oi8BckQ3ODk7LSJTVEYnRz/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAEDAgQF/8QAKREAAgICAgICAQQDAAAAAAAAAAECEQMhEjEEQVEFEyJhcYEygaHB8P/aAAwDAQACEQMRAD8A+QREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREH/2Q==" alt="Capa oficial do combo Guarda Municipal Porto Velho" />
     </div>
     <div class="card">
-      <div class="eyebrow">o que o cliente recebe</div>
-      <h2 style="font-size:42px; line-height:1.12; margin-bottom:14px;">Uma oferta montada com a identidade do seu próprio produto</h2>
-      <p style="font-size:19px; color:var(--muted);">A página foi ajustada para destacar sua capa, seu conteúdo visual e seus mapas mentais. Isso aumenta a coerência da oferta e melhora a percepção do visitante.</p>
+      <div class="eyebrow">o que você recebe</div>
+      <h2 style="font-size:42px; line-height:1.12; margin-bottom:14px;">Conteúdo completo e organizado para acelerar sua aprovação</h2>
+      <p style="font-size:19px; color:var(--muted);">Tudo foi estruturado para facilitar o estudo, a revisão e a memorização dos pontos mais importantes cobrados para Guarda Municipal.</p>
       <ul class="checklist">
-        <li>Resumos bizurados para Guarda Municipal</li>
-        <li>Porto Velho - Rondônia</li>
-        <li>Banca IDECAN</li>
-        <li>Bônus de simulados</li>
+        <li>Resumos bizurados prontos para revisão</li>
         <li>Mapas mentais de legislação específica</li>
+        <li>Material voltado para Porto Velho - Rondônia</li>
+        <li>Banca IDECAN em destaque</li>
+        <li>Bônus e simulados para reforçar a preparação</li>
       </ul>
       <div style="margin-top:24px; display:flex; gap:14px; flex-wrap:wrap;">
         <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="btn btn-blue">Comprar agora</a>
@@ -292,14 +296,14 @@ img { max-width:100%; display:block; }
   <div class="container">
     <div class="section-title">
       <div class="eyebrow">vídeo de apresentação</div>
-      <h2>Apresente o material em vídeo para aumentar a confiança</h2>
-      <p>Coloquei um bloco de vídeo no meio da página. Se o link público do Vimeo permitir incorporação, ele aparece direto aqui.</p>
+      <h2>Veja uma apresentação do material antes de comprar</h2>
+      <p>Use este vídeo para aumentar a confiança do visitante e mostrar de forma mais clara o valor do conteúdo.</p>
     </div>
     <div class="video-wrap">
       <iframe src="https://player.vimeo.com/video/1177298098" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Vídeo de apresentação do material"></iframe>
     </div>
     <div style="text-align:center; margin-top:16px; color:var(--muted); font-weight:800;">
-      Se o vídeo não carregar por restrição do Vimeo, abra direto aqui:
+      Caso o vídeo não carregue, acesse diretamente aqui:
       <a href="https://vimeo.com/manage/videos/1177298098" target="_blank" style="color:#9ec1ff;">link do vídeo</a>
     </div>
   </div>
@@ -309,15 +313,15 @@ img { max-width:100%; display:block; }
   <div class="container">
     <div class="section-title">
       <div class="eyebrow">prova visual do conteúdo</div>
-      <h2>Mostre o mapa mental e o visual do material logo na página</h2>
-      <p>Quando o visitante vê a capa e o exemplo do conteúdo, ele entende melhor o que está comprando.</p>
+      <h2>Veja um exemplo real do conteúdo que você vai receber</h2>
+      <p>Esse exemplo ajuda você a enxergar melhor a proposta do material e aumenta a segurança antes da compra.</p>
     </div>
     <div class="grid-2">
       <div class="card media-card"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCALQB4ADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAQIAAwQF/8QARhAAAQMDAgMFBQcEAwkAAAAAAQACAwQFEQYhMRIHE0FRFCJhcYGRMqGxQlNScvAUM0JicoKSssLS4fAzc8LxFUNTYoP/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQIDBAX/xAArEQEAAQMCBQIHAAAAAAAAAAABAgMEEQUSITETQVEiYXGBkaHB0QYUMnH/2gAMAwEAAhEDEQA/APZ6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/2Q==" alt="Exemplo de mapa mental do material de Guarda Municipal" /></div>
       <div class="card">
         <div class="icon">🧠</div>
         <h3>Mapas mentais de legislação específica</h3>
-        <p>Essa imagem foi colocada como prova visual do conteúdo. Isso ajuda muito a diminuir objeção e aumentar a vontade de comprar.</p>
+        <p>Um exemplo visual do material para mostrar a organização do conteúdo e facilitar sua decisão de compra.</p>
         <ul class="checklist">
           <li>Visual direto ao ponto</li>
           <li>Resumo para revisão mais rápida</li>
@@ -332,8 +336,8 @@ img { max-width:100%; display:block; }
   <div class="container">
     <div class="section-title">
       <div class="eyebrow">bônus e diferenciais</div>
-      <h2>Empilhe valor na oferta com mais argumentos de compra</h2>
-      <p>Além da capa principal, a página agora destaca banca, simulados, mapas mentais e suporte por WhatsApp.</p>
+      <h2>Mais vantagens para reforçar sua decisão de compra</h2>
+      <p>Além do conteúdo principal, você ainda conta com simulados, mapas mentais e suporte para estudar com mais confiança.</p>
     </div>
     <div class="grid-3">
       <article class="card">
@@ -359,13 +363,13 @@ img { max-width:100%; display:block; }
   <div class="container">
     <div class="section-title">
       <div class="eyebrow">oferta final</div>
-      <h2>Garanta agora o seu material por R$ 19,99</h2>
-      <p>Estrutura grande, visual alinhado com o seu produto e checkout já pronto com o seu link.</p>
+      <h2>Garanta agora seu acesso por apenas R$ 19,99</h2>
+      <p>Oferta especial com excelente custo-benefício para quem quer começar a estudar agora.</p>
     </div>
     <div class="grid-2">
       <article class="card">
         <h3>Plano de entrada</h3>
-        <p>Oferta acessível para puxar mais cliques e aumentar a chance de conversão rápida.</p>
+        <p>Ideal para quem quer adquirir o material completo com preço promocional e acesso rápido.</p>
         <div class="plan-price-old">de R$ 47,00</div>
         <div class="plan-price-new">R$ 19,99</div>
         <div class="plan-sub">pagamento único</div>
@@ -380,7 +384,7 @@ img { max-width:100%; display:block; }
       <article class="card plan-card highlight">
         <div class="plan-badge">mais escolhido</div>
         <h3>Plano completo em destaque</h3>
-        <p>A mesma oferta, mas com mais destaque visual dentro da página para empurrar o clique no botão.</p>
+        <p>Versão destacada da oferta para quem quer aproveitar a condição promocional disponível nesta página.</p>
         <div class="plan-price-old">de R$ 97,00</div>
         <div class="plan-price-new">R$ 19,99</div>
         <div class="plan-sub">condição especial desta página</div>
@@ -400,21 +404,21 @@ img { max-width:100%; display:block; }
   <div class="container">
     <div class="section-title">
       <div class="eyebrow">perguntas frequentes</div>
-      <h2>Remova objeções antes do checkout</h2>
-      <p>FAQ simples para responder dúvidas comuns e manter o visitante avançando até a compra.</p>
+      <h2>Perguntas frequentes</h2>
+      <p>Tire suas dúvidas antes da compra e avance com mais segurança.</p>
     </div>
     <div class="grid-2">
       <div class="faq-item">
         <button class="faq-q">Como recebo o material? <span>+</span></button>
-        <div class="faq-a">Após a confirmação do pagamento, você pode entregar por link, área de membros, Drive ou outro método que usar na sua operação.</div>
+        <div class="faq-a">Após a confirmação do pagamento, o acesso ao material é liberado digitalmente.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">O botão já está com meu link? <span>+</span></button>
-        <div class="faq-a">Sim. Os botões principais desta página já apontam para o seu checkout da Eduzz.</div>
+        <div class="faq-a">Sim. Basta clicar no botão para seguir ao pagamento com segurança.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">O WhatsApp foi adicionado? <span>+</span></button>
-        <div class="faq-a">Sim. Foi incluído um botão de suporte com o número 69 99353-9150.</div>
+        <div class="faq-a">Sim. Você conta com suporte direto pelo WhatsApp para tirar dúvidas.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">O vídeo pode não abrir direto? <span>+</span></button>
@@ -425,29 +429,21 @@ img { max-width:100%; display:block; }
 </section>
 
 <footer class="footer">
-  <div class="container footer-grid">
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
     <div>
-      <h3>JR Apostilas</h3>
-      <p>Material digital para Guarda Municipal com visual forte de venda, checkout pronto e suporte por WhatsApp.</p>
+      <h3 style="margin-bottom:8px;">JR Apostilas</h3>
+      <p style="margin:0; color:var(--muted); max-width:620px;">Material digital para Guarda Municipal com acesso imediato, organização estratégica e foco nos pontos mais importantes da prova.</p>
     </div>
-    <div>
-      <h4>Links</h4>
-      <a href="#material">Material</a>
-      <a href="#video">Vídeo</a>
-      <a href="#bonus">Bônus</a>
-      <a href="#faq">FAQ</a>
-    </div>
-    <div>
-      <h4>Suporte</h4>
-      <p>WhatsApp: (69) 99353-9150</p>
-      <p>Atendimento digital</p>
+    <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+      <a href="https://wa.me/5569993539150?text=Ol%C3%A1%2C%20quero%20suporte%20sobre%20o%20Combo%20Guarda%20Municipal." target="_blank" class="btn btn-outline" style="padding:14px 22px; border-color:rgba(255,255,255,.12);">Suporte</a>
+      <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="btn btn-gold" style="padding:14px 24px;">Comprar agora</a>
     </div>
   </div>
   <div class="container copy">© 2026 JR Apostilas — Todos os direitos reservados.</div>
 </footer>
 
 <a href="https://chk.eduzz.com/8017Y2DA07" target="_blank" class="floating-cta">Garantir Preparatório</a>
-<a href="https://wa.me/5569993539150?text=Ol%C3%A1%2C%20quero%20suporte%20sobre%20o%20Combo%20Guarda%20Municipal." target="_blank" class="floating-whats">WhatsApp Suporte</a>
+<a href="https://wa.me/5569993539150?text=Ol%C3%A1%2C%20quero%20suporte%20sobre%20o%20Combo%20Guarda%20Municipal." target="_blank" class="floating-whats">WhatsApp</a>
 
 <script>
 const IMG_COVER = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QCiRXhpZgAATU0AKgAAAAgABgESAAMAAAABAAEAAAEaAAUAAAABAAAAVgEbAAUAAAABAAAAXgEoAAMAAAABAAIAAAITAAMAAAABAAEAAAAAAAAAAABIAAAAAQAAAEgAAAABUGFpbnQuTkVUIHYzLjM2AAACoAIABAAAAAEAAAP9oAMABAAAAAEAAAR5AAAAAP/bAEMAAwICAwICAwMDAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/bAEMBAwMDBAQEBQoEBQoUDBQMDBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAQAA/0DASIAAhEBAxEB/8QAHQABAQEAAgMBAQAAAAAAAAAABQYBAwQCBwgJCv/EAFMQAAEDAgQDBQUEBQgHBQkAAAEAAgMEEQUSITEGE0FRImFxgZEykaEHFDNSUrHB0RVCYnKS4fAVM2Oi8BckQ3ODk7LSJTVEYnRz/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAEDAgQF/8QAKREAAgICAgICAQQDAAAAAAAAAAECEQMhEjEEQVEFEyJhcYEygaHB8P/aAAwDAQACEQMRAD8A+QREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREH/2Q==";
