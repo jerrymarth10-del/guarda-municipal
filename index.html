@@ -457,17 +457,61 @@ const uploadedImages = [
   { src: IMG_MAPS, alt: "Mapa mental repetido", label: "Conteúdo visual" },
   { src: IMG_YELLOW, alt: "Arte repetida", label: "Oferta mais alinhada" }
 ];
-const carouselTrack = document.getElementById('carouselTrack');
-carouselTrack.innerHTML = [...uploadedImages, ...uploadedImages].map(img => `
-  <div class="carousel-card">
-    <img src="${img.src}" alt="${img.alt}">
-    <div class="carousel-label">${img.label}</div>
-  </div>
-`).join('');
-const offerBar = document.getElementById('offerBar');
-function updateOfferBar() {
-  const hoje = new Date();
-  offerBar.textContent = `⚠ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE ${hoje.toLocaleDateString('pt-BR')} ⚠`;
+<!DOCTYPE html>
+  50% { transform: translateX(-50%) scale(1.03); }
+  100% { transform: translateX(-50%) scale(1); }
+}
+</style>
+
+<div class="barra-promocao" id="barraPromocao">
+  ⚠️ PROMOÇÃO VÁLIDA ATÉ <span id="dataPromocao"></span> ! ⚠️
+</div>
+
+<style>
+  .barra-promocao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ff0000;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+    padding: 16px 12px;
+    z-index: 10000;
+    text-transform: uppercase;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  @media (max-width: 768px) {
+    .barra-promocao {
+      font-size: 15px;
+      padding: 12px 10px;
+      line-height: 1.35;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const hoje = new Date();
+
+    const diasSemana = [
+      "DOMINGO",
+      "SEGUNDA-FEIRA",
+      "TERÇA-FEIRA",
+      "QUARTA-FEIRA",
+      "QUINTA-FEIRA",
+      "SEXTA-FEIRA",
+      "SÁBADO"
+    ];
+
+    const diaSemana = diasSemana[hoje.getDay()];
+    const dia = String(hoje.getDate()).padStart(2, "0");
+    const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+    const ano = hoje.getFullYear();
 }
 function updateCountdown() {
   const now = new Date();
