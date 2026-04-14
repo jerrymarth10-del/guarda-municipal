@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JR Gabaritando Provas - SaaS Premium</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-badge">JR</div>
+      <div>
+        <h1>JR Gabaritando Provas</h1>
+        <p>SaaS Premium</p>
+      </div>
+    </div>
+    <nav class="top-actions">
+      <button class="ghost" id="btnGoDashboard">Dashboard</button>
+      <button class="ghost" id="btnGoAdmin">Admin</button>
+      <button class="ghost" id="btnExport">Exportar JSON</button>
+      <label class="ghost file-btn">
+        Importar JSON
+        <input type="file" id="fileImport" accept="application/json" hidden>
+      </label>
+      <button class="gold" id="btnResetDemo">Reset demo</button>
+    </nav>
+  </header>
+
+  <main class="app-shell">
+    <aside class="sidebar">
+      <button class="nav-btn active" data-view="welcome">Início</button>
+      <button class="nav-btn" data-view="dashboard">Dashboard</button>
+      <button class="nav-btn" data-view="quiz">Simulado</button>
+      <button class="nav-btn" data-view="admin">Admin</button>
+      <button class="nav-btn" data-view="techniques">Técnicas</button>
+      <button class="nav-btn" data-view="settings">Configurações</button>
+    </aside>
+
+    <section class="content">
+      <section class="view active" id="view-welcome">
+        <div class="hero-card">
+          <span class="pill">Fluxo Premium</span>
+          <h2>Treine, ensine a técnica e gerencie suas questões em um só app.</h2>
+          <p class="muted">Esta versão vem com onboarding, aquecimento, técnicas, simulado, resultado final, área admin e banco de questões local. Pronta para subir no GitHub + Vercel.</p>
+          <div class="hero-grid">
+            <div class="premium-card"><h3>Área do aluno</h3><p>Onboarding, questão de aquecimento, técnica aplicada e simulado com progresso.</p></div>
+            <div class="premium-card"><h3>Área admin</h3><p>Cadastre, edite, exclua, filtre e importe/exporte questões em JSON.</p></div>
+            <div class="premium-card"><h3>Resultados</h3><p>Pontuação, percentual, leitura do desempenho e histórico local.</p></div>
+          </div>
+          <div class="cta-row">
+            <button class="gold big" id="btnStartJourney">Começar experiência</button>
+            <button class="ghost big" id="btnOpenAdmin">Abrir admin</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-dashboard">
+        <div class="section-head"><div><span class="pill">Resumo</span><h2>Dashboard</h2></div></div>
+        <div class="stats-grid">
+          <div class="stat-card"><span>Total de questões</span><strong id="statQuestions">0</strong></div>
+          <div class="stat-card"><span>Simulados realizados</span><strong id="statAttempts">0</strong></div>
+          <div class="stat-card"><span>Média de acertos</span><strong id="statAverage">0%</strong></div>
+          <div class="stat-card"><span>Último resultado</span><strong id="statLast">-</strong></div>
+        </div>
+        <div class="panel two-col">
+          <div class="card-panel"><h3>Últimos resultados</h3><div id="attemptsList" class="list-stack"></div></div>
+          <div class="card-panel"><h3>Banco por banca</h3><div id="bankBreakdown" class="list-stack"></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-quiz"><div id="quizStage"></div></section>
+
+      <section class="view" id="view-admin">
+        <div class="section-head"><div><span class="pill">Gestão</span><h2>Painel Admin</h2></div><button class="gold" id="btnNewQuestion">Nova questão</button></div>
+        <div class="panel">
+          <div class="filters">
+            <input type="text" id="searchInput" placeholder="Buscar por enunciado..." />
+            <select id="filterBank"><option value="">Todas as bancas</option><option value="CESPE">CESPE</option><option value="FCC">FCC</option><option value="FGV">FGV</option><option value="VUNESP">VUNESP</option><option value="Outra">Outra</option></select>
+            <select id="filterType"><option value="">Todos os tipos</option><option value="certo_errado">Certo ou Errado</option><option value="multipla">Múltipla escolha</option></select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Questão</th><th>Banca</th><th>Tipo</th><th>Resposta</th><th>Ações</th></tr></thead>
+              <tbody id="questionsTable"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal hidden" id="questionModal">
+          <div class="modal-card">
+            <div class="modal-head"><h3 id="modalTitle">Nova questão</h3><button class="ghost" id="btnCloseModal">Fechar</button></div>
+            <div class="form-grid">
+              <label>Enunciado<textarea id="formStatement" rows="5"></textarea></label>
+              <label>Explicação / técnica<textarea id="formExplanation" rows="5"></textarea></label>
+              <label>Banca<select id="formBank"><option value="CESPE">CESPE</option><option value="FCC">FCC</option><option value="FGV">FGV</option><option value="VUNESP">VUNESP</option><option value="Outra">Outra</option></select></label>
+              <label>Tipo<select id="formType"><option value="certo_errado">Certo ou Errado</option><option value="multipla">Múltipla escolha</option></select></label>
+              <label>Resposta correta<select id="formAnswer"><option value="true">Certo</option><option value="false">Errado</option></select></label>
+              <label>Nível<select id="formDifficulty"><option value="fácil">Fácil</option><option value="médio">Médio</option><option value="difícil">Difícil</option></select></label>
+            </div>
+            <div class="modal-actions"><button class="ghost" id="btnDeleteQuestion">Excluir</button><button class="gold" id="btnSaveQuestion">Salvar questão</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-techniques">
+        <div class="section-head"><div><span class="pill">Ensino</span><h2>Técnicas</h2></div></div>
+        <div class="hero-grid">
+          <div class="premium-card"><h3>1. Palavra absoluta</h3><p>Termos como “sempre”, “nunca”, “todos”, “jamais” costumam exigir atenção redobrada.</p></div>
+          <div class="premium-card"><h3>2. Linguagem equilibrada</h3><p>Frases moderadas e compatíveis com o texto legal tendem a estar corretas com mais frequência.</p></div>
+          <div class="premium-card"><h3>3. Técnica aplicada</h3><p>Não chute no automático: use o padrão da banca, o contexto e a exceção jurídica.</p></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-settings">
+        <div class="section-head"><div><span class="pill">Deploy</span><h2>Configurações</h2></div></div>
+        <div class="panel"><div class="card-panel"><h3>Como publicar</h3><ol class="steps"><li>Suba os arquivos no GitHub.</li><li>Importe o repositório no Vercel.</li><li>Deploy automático.</li></ol><p class="muted">Esta versão usa armazenamento local do navegador. Para multiusuário real com login e acesso pago, conecte um backend como Supabase, Firebase ou Node.</p></div></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
